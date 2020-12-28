@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import ImageTk, Image
-# loa: 1:24
+
 root = Tk()
 root.title('Working with images')
 root.iconbitmap('dot.ico')
