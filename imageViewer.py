@@ -13,6 +13,8 @@ myImg5 = ImageTk.PhotoImage(Image.open("images/orange.png"))
 
 imgList = [myImg1, myImg2, myImg3, myImg4, myImg5]
 
+status = Label(root, text='Image 1 of ' + str(len(imgList)), bd=1, relief=SUNKEN, anchor=E)
+
 label = Label(image=myImg1)
 label.grid(row=0, column=0, columnspan=3)
 
@@ -56,6 +58,7 @@ nextButton = Button(root, text=">>", command=lambda: forward(2))
 
 backButton.grid(row=1, column=0)
 exitButton.grid(row=1, column=1)
-nextButton.grid(row=1, column=2)
+nextButton.grid(row=1, column=2, pady=10)
+status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 root.mainloop()
