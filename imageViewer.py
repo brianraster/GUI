@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title("Image Viewer")
-root.iconbitmap('dot.ico')
+root.iconbitmap('images/dot.ico')
 
 myImg1 = ImageTk.PhotoImage(Image.open("images/apple.png"))
 myImg2 = ImageTk.PhotoImage(Image.open("images/banana.png"))
@@ -35,6 +35,9 @@ def forward(imageNum):
     backButton.grid(row=1, column=0)
     nextButton.grid(row=1, column=2)
 
+    status = Label(root, text='Image ' + str(imageNum) +' of ' + str(len(imgList)), bd=1, relief=SUNKEN, anchor=E)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
+
 def back(imageNum):
     global label
     global backButton
@@ -51,6 +54,9 @@ def back(imageNum):
     label.grid(row=0, column=0, columnspan=3)
     backButton.grid(row=1, column=0)
     nextButton.grid(row=1, column=2)
+
+    status = Label(root, text='Image ' + str(imageNum) +' of ' + str(len(imgList)), bd=1, relief=SUNKEN, anchor=E)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 backButton = Button(root, text="<<", command=back, state=DISABLED)
 exitButton = Button(root, text="EXIT", command=root.quit)
